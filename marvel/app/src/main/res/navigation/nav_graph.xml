@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/characterListFragment"
+>
+
+    <fragment
+            android:id="@+id/characterListFragment"
+            android:name="com.example.apirequest.fragments.CharacterList"
+            tools:layout="@layout/fragment_character_list"
+    >
+        <action android:id="@+id/charInfoAction"
+                app:destination="@id/characterInfoFragment"
+        />
+    </fragment>
+
+    <fragment
+            android:id="@+id/characterInfoFragment"
+            android:name="com.example.apirequest.fragments.CharacterInfo"
+            tools:layout="@layout/fragment_character_info">
+
+        <argument
+                android:name="character"
+                app:argType="com.example.apirequest.models.character.Character">
+        </argument>
+        <action
+                android:id="@+id/comicInfoAction"
+                app:destination="@id/comicInfoFragment"
+        />
+        <action
+                android:id="@+id/seriesInfoAction"
+                app:destination="@id/seriesInfoFragment"
+        />
+    </fragment>
+
+    <fragment
+            android:id="@+id/comicInfoFragment"
+            android:name="com.example.apirequest.fragments.ComicInfo"
+            tools:layout="@layout/fragment_comic"
+    >
+        <argument
+                android:name="comic"
+                app:argType="com.example.apirequest.models.comic.Comic"
+        />
+    </fragment>
+
+    <fragment
+            android:id="@+id/seriesInfoFragment"
+            android:name="com.example.apirequest.fragments.SeriesInfo"
+            tools:layout="@layout/fragment_series"
+    >
+        <argument
+                android:name="series"
+                app:argType="com.example.apirequest.models.series.Series"
+        />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.apirequest.fragments.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+    />
+
+</navigation>

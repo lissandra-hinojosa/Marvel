@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marvel</string>
+
+    <!--General-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+
+    <!--Bottom Navigation Tabs-->
+    <string name="marvelTab">Marvel</string>
+    <string name="profileTab">Profil</string>
+
+    <!--//Log In-->
+    <string name="log_in">Einloggen</string>
+    <string name="forgot_password">Passwort vergessen?</string>
+    <string name="incorrect_user">Falscher Benutzer</string>
+    <string name="wrong_info">Fehlende Felder</string>
+    <string name="invalid_info">Invalid information</string>
+
+    <!--Shared preferences file-->
+    <string name="preference_file_key">com.example.apirequest.PREFERENCE_FILE_KEY</string>
+    <string name="preference_key_user">com.example.apirequest.USER</string>
+    <string name="preference_name_user">com.example.apirequest.USER_NAME</string>
+    <string name="preference_lastname_user">com.example.apirequest.USER_LASTNAME</string>
+
+    <!--//Register-->
+    <string name="name">Name</string>
+    <string name="last_name">Nachname</string>
+    <string name="confirm_password">Confirm password</string>
+
+    <!--//Register password-->
+    <string name="reset_password">Passwort bestätigen</string>
+
+    <!--//User-->
+    <string name="welcome">Wilkommen</string>
+
+    <!--//Profile-->
+    <string name="take_photo">Phono machen</string>
+    <string name="select_photo">Photo auswählen</string>
+    <string name="log_out">Ausloggen</string>
+
+    <!--//Errors-->
+    <string name="error_email">Falsche email</string>
+    <string name="error_pass_match">Passwörter stimmen nicht überein</string>
+
+    <!--Accept-->
+    <string name="accept">Akzeptieren</string>
+
+    <!--Others-->
+    <string name="search">Suche</string>
+    <string name="limit">Grenze</string>
+    <string name="invalid_limit">Ungültiges Grenze</string>
+
+    <!--Character Information-->
+    <string name="comics">Comics</string>
+    <string name="events">Veranstaltungen</string>
+    <string name="series">Series</string>
+    <string name="stories">Geschichten</string>
+    <string name="no_description">Keine Beschreibung</string>
+    <string name="series_image_description">Serienbild</string>
+
+
+
+    <plurals name="comments">
+        <item quantity="one">Kommentar %d</item>
+        <item quantity="other">Kommentare %d</item>
+    </plurals>
+</resources>

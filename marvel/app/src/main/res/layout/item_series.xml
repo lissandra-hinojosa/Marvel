@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable name="series" type="com.example.apirequest.models.series.Series"/>
+    </data>
+    <com.google.android.material.card.MaterialCardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="@dimen/card_view_width"
+            android:layout_height="@dimen/card_view_height"
+            android:layout_margin="@dimen/default_padding"
+            app:cardCornerRadius="@dimen/card_view_radius"
+    >
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+
+            <ImageView
+                    app:urlToImage="@{series.thumbnail.path}"
+                    app:ext="@{series.thumbnail.extension}"
+                    android:id="@+id/seriesThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_view_image_height"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerCrop"
+
+            />
+
+            <TextView
+                    android:id="@+id/seriesElementTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{series.title}"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintLeft_toLeftOf="@id/seriesThumbnail"
+                    app:layout_constraintRight_toRightOf="@id/seriesThumbnail"
+                    app:layout_constraintTop_toBottomOf="@id/seriesThumbnail"
+                    app:layout_constraintBottom_toTopOf="@id/seriesDescription"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:padding="@dimen/default_padding"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            />
+
+            <TextView
+                    android:id="@+id/seriesDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{series.rating}"
+                    android:padding="@dimen/default_padding"
+                    app:layout_constraintTop_toBottomOf="@id/seriesTitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/seriesTitle"
+                    app:layout_constraintRight_toRightOf="@id/seriesTitle"
+                    android:layout_margin="@dimen/default_padding"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

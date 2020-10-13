@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph_login"
+            app:startDestination="@id/loginFragment"
+>
+
+
+    <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.apirequest.fragments.LogInFragment"
+            tools:layout="@layout/fragment_login">
+        <action
+                android:id="@+id/resetPassAction"
+                app:destination="@id/resetPassFragment"/>
+        <action
+                android:id="@id/registerUserFragment"
+                app:destination="@id/registerUserFragment"/>
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/resetPassFragment"
+            android:name="com.example.apirequest.fragments.ResetPasswordFragment"
+            tools:layout="@layout/fragment_reset_password">
+    </fragment>
+
+    <fragment
+            android:id="@+id/registerUserFragment"
+            android:name="com.example.apirequest.fragments.RegisterUserFragment"
+            tools:layout="@layout/fragment_register"
+    >
+        <!--<action-->
+            <!--android:id="@+id/registerUserAction"-->
+            <!--app:destination="@id/characterListFragment"/>-->
+
+    </fragment>
+
+</navigation>

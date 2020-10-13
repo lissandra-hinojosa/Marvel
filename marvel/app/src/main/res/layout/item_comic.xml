@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable name="comic" type="com.example.apirequest.models.comic.Comic"/>
+        <variable name="onClickComic" type="android.view.View.OnClickListener"/>
+    </data>
+    <com.google.android.material.card.MaterialCardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="@dimen/card_view_width"
+            android:layout_height="@dimen/card_view_height"
+            android:layout_margin="@dimen/default_padding"
+            app:cardCornerRadius="@dimen/card_view_radius"
+            android:onClick="@{onClickComic}"
+    >
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+        >
+
+
+            <ImageView
+                    app:urlToImage="@{comic.thumbnail.path}"
+                    app:ext="@{comic.thumbnail.extension}"
+                    android:id="@+id/comicThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_view_image_height"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerCrop"
+
+            />
+
+            <TextView
+                    android:id="@+id/comicTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{comic.title}"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:padding="@dimen/default_padding"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintLeft_toLeftOf="@id/comicThumbnail"
+                    app:layout_constraintRight_toRightOf="@id/comicThumbnail"
+                    app:layout_constraintTop_toBottomOf="@id/comicThumbnail"
+                    app:layout_constraintBottom_toTopOf="@id/comicDescription"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_margin="@dimen/default_padding"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            />
+
+            <TextView
+                    android:id="@+id/comicDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(comic.id)}"
+                    android:padding="@dimen/default_padding"
+                    app:layout_constraintTop_toBottomOf="@id/comicTitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/comicTitle"
+                    app:layout_constraintRight_toRightOf="@id/comicTitle"
+                    android:layout_margin="@dimen/default_padding"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

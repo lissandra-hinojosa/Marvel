@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="character" type="com.example.apirequest.models.character.Character"/>
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+        <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:fillViewport="true"
+        >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/default_parent_padding">
+
+
+                <TextView
+                        android:id="@+id/charModifiedDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/charDescription"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/charId"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="0"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        android:layout_marginBottom="20dp"
+                        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                        android:text="@{String.valueOf(character.modified)}"
+                />
+
+
+                <TextView
+                        android:id="@+id/charId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="@id/charModifiedDate"
+                        app:layout_constraintBottom_toBottomOf="@id/charModifiedDate"
+                        app:layout_constraintLeft_toRightOf="@id/charModifiedDate"
+                        app:layout_constraintRight_toRightOf="parent"
+                        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                        android:gravity="end"
+                        android:text="@{String.valueOf(character.id)}"
+                />
+
+
+                <TextView
+                        android:id="@+id/charDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="19dp"
+                        app:layout_constraintTop_toBottomOf="@id/charModifiedDate"
+                        app:layout_constraintBottom_toTopOf="@id/comicsTitle"
+                        android:layout_marginBottom="@dimen/section_divider"
+                        tools:layout_editor_absoluteX="16dp"
+                        android:text="@{character.description}"
+                />
+
+                <TextView
+                        android:id="@+id/comicsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comics"
+                        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                        app:layout_constraintTop_toBottomOf="@id/charDescription"
+                        app:layout_constraintBottom_toTopOf="@id/comicsRecycler"
+                        android:background="@drawable/text_bottom_lines"
+                        android:layout_marginTop="@dimen/section_top_margin"
+
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/comicsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/comicsTitle"
+                        app:layout_constraintBottom_toTopOf="@id/seriesTitle"
+                        android:layout_marginBottom="@dimen/section_divider"
+
+                >
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <TextView
+                        android:id="@+id/seriesTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/series"
+                        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                        app:layout_constraintTop_toBottomOf="@id/comicsRecycler"
+                        app:layout_constraintBottom_toTopOf="@id/seriesRecycler"
+                        android:layout_marginTop="@dimen/section_top_margin"
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/seriesRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/seriesTitle"
+                        app:layout_constraintBottom_toTopOf="@id/storiesTitle"
+                        android:layout_marginBottom="@dimen/section_divider"
+                >
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                        android:id="@+id/storiesTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stories"
+                        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                        app:layout_constraintTop_toBottomOf="@id/seriesRecycler"
+                        app:layout_constraintBottom_toTopOf="@id/storiesRecycler"
+                        android:layout_marginTop="@dimen/section_top_margin"
+                        android:gravity="top"
+
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/storiesRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/storiesTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0"
+                        android:layout_marginBottom="@dimen/section_divider"
+                >
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        >
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/actionBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:collapsedTitleTextAppearance="@style/collapsedtoolbar"
+                    app:expandedTitleTextAppearance="@style/expandedtoolbar"
+            >
+
+                <ImageView
+                        app:urlToImage="@{character.thumbnail.path}"
+                        app:ext="@{character.thumbnail.extension}"
+                        android:id="@+id/imageView"
+                        android:tint="#66000000"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        app:layout_collapseMode="parallax"
+                />
+
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_gravity="top"
+                        app:layout_collapseMode="pin"/>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

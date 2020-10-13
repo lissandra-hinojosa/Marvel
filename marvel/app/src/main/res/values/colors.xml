@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--# '80' 008577 opacity-->
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorAccent">#D1C4E9</color>
+
+    <color name="colorPrimaryOpacity">#20008577</color>
+    <color name="light_gray">#9E9E9E</color>
+
+
+    <!--PROFILE IMAGE VIEW-->
+    <color name="gradient_start">#5770f3</color>
+    <color name="gradient_end">#8e5aeb</color>
+    <color name="profile_desc">#D1D1FF</color>
+    <color name="bg_meta_container">#000000</color>
+    <color name="profile_default_tint">#e0e0e0</color>
+
+</resources>

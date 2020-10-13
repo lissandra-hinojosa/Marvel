@@ -1,0 +1,132 @@
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="name" type="String"/>
+        <variable name="lastName" type="String"/>
+        <variable name="email" type="String"/>
+        <variable name="profilePicture" type="android.net.Uri"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/default_parent_padding"
+    >
+
+
+        <ImageView
+                android:id="@+id/buttonLogOut"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/profileImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/profileImage"
+                android:background="@drawable/logout"
+                app:layout_constraintHorizontal_bias="1"
+                android:src="@{profilePicture}"
+        />
+        <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonLogOut"
+                android:background="@drawable/profile_image"
+        />
+
+        <ImageView
+                android:id="@+id/editButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle"
+                android:elevation="5dp"
+                android:padding="5dp"
+                app:layout_constraintCircle="@+id/profileImage"
+                app:layout_constraintCircleAngle="135"
+                app:layout_constraintCircleRadius="70dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_add_circle_outline_black_24dp"
+        />
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profileUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/profileImage"
+                app:layout_constraintBottom_toTopOf="@id/profileUserLastName"
+                style="@style/text_input"
+                android:layout_marginBottom="@dimen/button_margin"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:hint="@string/name"
+                app:hintEnabled="true"
+                tools:layout_editor_absoluteX="16dp"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{name}"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profileUserLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/profileUserName"
+                app:layout_constraintBottom_toTopOf="@id/profileUserEmail"
+                android:layout_marginBottom="@dimen/button_margin"
+                style="@style/text_input"
+                android:hint="@string/last_name"
+                app:hintEnabled="true"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{lastName}"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profileUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/profileUserLastName"
+                app:layout_constraintBottom_toTopOf="@id/buttonSaveUser"
+                style="@style/text_input"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:hint="@string/email"
+                app:hintEnabled="true"
+
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@{email}"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSaveUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/save_profile"
+                style="@style/primary_button"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

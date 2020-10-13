@@ -1,0 +1,57 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Text Input-->
+    <style name="text_input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:background">@android:color/transparent</item>
+        <!--<item name="boxBackgroundColor">@android:color/transparent</item>-->
+    </style>
+
+
+    <!--Secondary Button-->
+    <style name="secondary_button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">20dp</item>
+        <!--<item name="android:background">@color/colorPrimaryDark</item>-->
+        <item name="backgroundTint">@color/colorPrimaryDark</item>
+    </style>
+
+    <!--CollapsedToolbar Style-->
+    <style name="expandedtoolbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="collapsedtoolbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/subtitle_size</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <!--Primary Button-->
+    <style name="primary_button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:layout_height">@dimen/button_primary_height</item>
+    </style>
+
+    <!--&lt;!&ndash;Positive Dialog Button&ndash;&gt;-->
+    <!--<style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+    <!--</style>-->
+    
+    <style name="positive_dialog_button" parent="Base.Theme.MaterialComponents.Light.Dialog">
+        <!--<item name="android:textColor"></item>-->
+        <item name="android:positiveButtonText">@android:color/white</item>
+    </style>
+
+    <!--<style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">-->
+        <!--<item name="android:windowBackground">@drawable/splash</item>-->
+    <!--</style>-->
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable name="emailHint" type="String"/>
+        <variable name="passwordHint" type="String"/>
+        <variable name="clickLogin" type="android.view.View.OnClickListener"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/default_parent_padding"
+    >
+
+        <TextView
+                android:id="@+id/titleLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/log_in"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textInputEmail"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:layout_marginBottom="@dimen/button_margin"
+        />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/titleLogIn"
+                app:layout_constraintBottom_toTopOf="@id/textInputPassword"
+                style="@style/text_input"
+                android:hint="@{emailHint}"
+                app:hintEnabled="true"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:layout_marginBottom="@dimen/button_margin"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textInputEmail"
+                app:layout_constraintBottom_toTopOf="@id/textForgotPassword"
+                style="@style/text_input"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:hint="@{passwordHint}"
+                app:hintEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="@dimen/button_margin"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:id="@+id/textForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="@string/forgot_password"
+                app:layout_constraintTop_toBottomOf="@id/textInputPassword"
+                app:layout_constraintBottom_toTopOf="@id/textRegister"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:textColor="@drawable/text_button"
+        />
+
+        <TextView
+                android:id="@+id/textRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                app:layout_constraintTop_toBottomOf="@id/textForgotPassword"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@drawable/text_button"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonLogIn"
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/log_in"
+                android:onClick="@{clickLogin}"
+                style="@style/primary_button"
+
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
